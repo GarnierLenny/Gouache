@@ -12,5 +12,6 @@
 
 global_t *init_global(void);
 window_t *init_window(void);
+void window_loop(global_t *global);
 
 #endif /* !MY_H_ */

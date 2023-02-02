@@ -11,10 +11,6 @@ int main(void)
 {
     global_t *global = init_global();
 
-    while (sfRenderWindow_isOpen(global->window->window)) {
-        while (sfRenderWindow_pollEvent(global->window->window, &global->window->event))
-            if (global->window->event.type == sfEvtClosed)
-                sfRenderWindow_close(global->window->window);
-    }
+    window_loop(global);
     return 0;
 }

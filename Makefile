@@ -8,6 +8,7 @@
 SRC			=	src/main.c\
 				src/initialize/init_window.c\
 				src/initialize/init_global.c\
+				src/display/window_loop.c\
 
 INCLUDE		=	-I ./include
 
@@ -15,7 +16,7 @@ NAME		=	gouache
 
 SFML_FLAGS	=	-lcsfml-graphics -lcsfml-audio
 
-all: fclean $(NAME)
+all: $(NAME)
 
 $(NAME):
 	gcc -o $(NAME) $(SRC) $(INCLUDE) $(CFLAGS) $(SFML_FLAGS)
