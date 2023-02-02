@@ -10,6 +10,12 @@
 #ifndef GLOBAL_H_
 #define GLOBAL_H_
 
+struct pixels {
+    int data;
+    struct pixels *next;
+    struct pixels *prev;
+};
+
 typedef struct global_s {
     window_t *window;
 } global_t;

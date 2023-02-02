@@ -9,8 +9,19 @@
 
 int main(void)
 {
-    global_t *global = init_global();
+    struct pixels *pixels_head = NULL;
 
-    window_loop(global);
+    print_list(pixels_head);
+    push_front(&pixels_head, 1);
+    push_front(&pixels_head, 2);
+    push_front(&pixels_head, 3);
+    push_back(&pixels_head, 4);
+    print_list(pixels_head);
+    pop_back(&pixels_head);
+    print_list(pixels_head);
+    //global_t *global = init_global();
+    //window_loop(global);
+
+
     return 0;
 }
