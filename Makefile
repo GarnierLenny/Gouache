@@ -27,7 +27,7 @@ INCLUDE		=	-I ./include\
 
 NAME		=	gouache
 
-SFML_FLAGS	=	-lcsfml-graphics -lcsfml-audio
+SFML_FLAGS	=	-lcsfml-graphics -lcsfml-audio -lcsfml-window
 
 all: $(NAME)
 

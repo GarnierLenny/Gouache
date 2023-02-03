@@ -11,6 +11,7 @@
 #include <string.h>
 #include <SFML/Graphics.h>
 #include <SFML/Audio.h>
+#include <SFML/Window.h>
 
 #ifndef INCLUDE_H_
 #define INCLUDE_H_
