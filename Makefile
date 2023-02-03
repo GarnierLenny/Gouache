@@ -19,6 +19,9 @@ SRC			=	src/main.c\
 				src/list_actions/utils/list_length.c\
 				src/list_actions/utils/print_list.c\
 				src/utils/create_color.c\
+				src/utils/abs.c\
+				src/tools/pencil.c\
+				src/tools/eraser.c\
 
 INCLUDE		=	-I ./include\
 				-I ./include/structures\

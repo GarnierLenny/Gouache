@@ -18,6 +18,7 @@ void init_sprite(sprite **sprite, sfUint8 *color, sfVector2f position)
     (*sprite)->sprite = sfSprite_create();
     sfSprite_setTexture((*sprite)->sprite,
         (*sprite)->texture, sfTrue);
+    (*sprite)->position = (sfVector2i){position.x, position.y};
     sfSprite_setPosition((*sprite)->sprite, position);
     return;
 }

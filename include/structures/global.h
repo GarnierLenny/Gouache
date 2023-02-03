@@ -11,8 +11,16 @@
 #ifndef GLOBAL_H_
 #define GLOBAL_H_
 
+typedef enum tool_s {
+    pencil,
+    eraser,
+} tool;
+
 typedef struct global_s {
     window_t *window;
+    sfBool eraser;
+    sfBool pencil;
+    tool currentTool;
 } global_t;
 
 #endif /* !GLOBAL_H_ */

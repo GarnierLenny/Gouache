@@ -23,5 +23,8 @@ void erase(pixels **pixels_head, int index);
 sfUint8 *create_color(sfUint8 r, sfUint8 g, sfUint8 b, sfUint8 a);
 void display_pixels(sfRenderWindow *window, pixels *pixels_head);
 void init_sprite(sprite **sprite, sfUint8 *color, sfVector2f position);
+int abs(int nb);
+void eraser_tool(pixels **pixels_head, sfVector2i mouse_position);
+void pencil_tool(pixels **pixels_head, sfVector2i mouse_position);
 
 #endif /* !MY_H_ */
