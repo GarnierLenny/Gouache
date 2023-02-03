@@ -7,7 +7,17 @@
 
 #include "my.h"
 
-void push_front(pixels **pixels_head, rgba color)
+/* void init_new_pixel(pixels **new_pixel)
+{
+    (*new_pixel) = (pixels*)malloc(sizeof(pixels));
+
+    (*new_pixel)->sprite = malloc(sizeof(sprite));
+    (*new_pixel)->next = (*pixels_head);
+    (*new_pixel)->prev = NULL;
+    return;
+} */
+
+void push_front(pixels **pixels_head, sfUint8 *color, sfVector2f position)
 {
     pixels *new_pixel =
         (pixels*)malloc(sizeof(pixels));
@@ -15,7 +25,12 @@ void push_front(pixels **pixels_head, rgba color)
     new_pixel->sprite = malloc(sizeof(sprite));
     new_pixel->next = (*pixels_head);
     new_pixel->prev = NULL;
-    new_pixel->sprite->color = color;
+    init_sprite(&new_pixel->sprite, color, position);
+    if ((*pixels_head) == NULL) {
+        (*pixels_head) = (pixels*)malloc(sizeof(pixels));
+        (*pixels_head) = new_pixel;
+        return;
+    }
     if ((*pixels_head) != NULL)
         (*pixels_head)->prev = new_pixel;
     (*pixels_head) = new_pixel;

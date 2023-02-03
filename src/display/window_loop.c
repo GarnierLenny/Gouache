@@ -5,37 +5,27 @@
 ** window_loop
 */
 
-#include "global.h"
+#include "my.h"
 
-sfColor color(unsigned short r, unsigned short g, unsigned short b,
-    unsigned short a)
+void window_loop(global_t *global, pixels *pixels_head)
 {
-    sfColor color = {r, g, b, a};
-
-    return color;
-}
-
-void window_loop(global_t *global)
-{
-    sfImage *image = sfImage_createFromColor(1, 1, color(255,
-        255, 255, 255));
-    sfSprite *sprite;
-    sfTexture *texture;
-    sfColor color = {255, 255, 255, 255};
-    sfUint8 pixels[4] = {color.r, color.g, color.b, color.a};
-
-    texture = sfTexture_create(1, 1);
-    sfTexture_updateFromPixels(texture, pixels, 1, 1, 0, 0);
-    sprite = sfSprite_create();
-    sfSprite_setTexture(sprite, texture, sfTrue);
-    sfSprite_setPosition(sprite, (sfVector2f){100, 100});
+    push_back(&pixels_head, create_color(255, 255, 255, 255), (sfVector2f){100, 100});
+    print_list(pixels_head);
+    push_back(&pixels_head, create_color(255, 255, 255, 255), (sfVector2f){200, 200});
+    print_list(pixels_head);
+    push_back(&pixels_head, create_color(255, 255, 255, 255), (sfVector2f){300, 300});
+    print_list(pixels_head);
+    push_back(&pixels_head, create_color(255, 255, 255, 255), (sfVector2f){400, 400});
+    print_list(pixels_head);
+    push_front(&pixels_head, create_color(0, 255, 255, 255), (sfVector2f){200, 400});
+    print_list(pixels_head);
 
     while (sfRenderWindow_isOpen(global->window->window)) {
         while (sfRenderWindow_pollEvent(global->window->window, &global->window->event))
             if (global->window->event.type == sfEvtClosed)
                 sfRenderWindow_close(global->window->window);
         sfRenderWindow_clear(global->window->window, sfBlack);
-        sfRenderWindow_drawSprite(global->window->window, sprite, NULL);
+        display_pixels(global->window->window, pixels_head);
         sfRenderWindow_display(global->window->window);
     }
     return;

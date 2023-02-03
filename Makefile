@@ -8,7 +8,9 @@
 SRC			=	src/main.c\
 				src/initialize/init_window.c\
 				src/initialize/init_global.c\
+				src/initialize/init_sprite.c\
 				src/display/window_loop.c\
+				src/display/display_pixels.c\
 				src/list_actions/alterate/push_back.c\
 				src/list_actions/alterate/push_front.c\
 				src/list_actions/alterate/pop_front.c\

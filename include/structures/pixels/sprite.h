@@ -12,7 +12,7 @@
 #define SPRITE_H_
 
 typedef struct sprite_s {
-    rgba color;
+    sfUint8 color[4];
     sfSprite *sprite;
     sfTexture *texture;
     sfVector2i position;

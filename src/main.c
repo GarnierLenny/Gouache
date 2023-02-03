@@ -10,16 +10,9 @@
 int main(void)
 {
     pixels *pixels_head = NULL;
+    global_t *global = init_global();
 
-    push_front(&pixels_head, create_color(0, 1, 2, 3));
-    print_list(pixels_head);
-    push_front(&pixels_head, create_color(21, 22, 23, 24));
-    print_list(pixels_head);
-    push_back(&pixels_head, create_color(12, 13, 14, 15));
-    print_list(pixels_head);
-    pop_back(&pixels_head);
-    print_list(pixels_head);
-    //global_t *global = init_global();
-    //window_loop(global);
+    window_loop(global, pixels_head);
+    free(pixels_head);
     return 0;
 }

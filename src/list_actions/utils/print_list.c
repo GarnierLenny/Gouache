@@ -17,10 +17,10 @@ void print_list(pixels *pixels_head)
         return;
     }
     while (tmp != NULL) {
-        printf("[%d, %d, %d, %d]", tmp->sprite->color.r,
-            tmp->sprite->color.g,
-            tmp->sprite->color.b,
-            tmp->sprite->color.a);
+        printf("[%d, %d, %d, %d]", tmp->sprite->color[0],
+            tmp->sprite->color[1],
+            tmp->sprite->color[2],
+            tmp->sprite->color[3]);
         if (tmp->next != NULL)
             printf(" -> ");
         tmp = tmp->next;
