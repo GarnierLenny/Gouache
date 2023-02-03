@@ -5,13 +5,15 @@
 ** pixels
 */
 
+#include "sprite.h"
+
 #ifndef PIXELS_H_
 #define PIXELS_H_
 
-struct pixels {
-    int data;
-    struct pixels *next;
-    struct pixels *prev;
-};
+typedef struct pixels_s {
+    sprite *sprite;
+    struct pixels_s *next;
+    struct pixels_s *prev;
+} pixels;
 
 #endif /* !PIXELS_H_ */

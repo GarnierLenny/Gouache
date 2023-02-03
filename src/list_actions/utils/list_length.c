@@ -7,9 +7,9 @@
 
 #include "my.h"
 
-int pixels_length(struct pixels *pixels_head)
+int pixels_length(pixels *pixels_head)
 {
-    struct pixels *tmp = pixels_head;
+    pixels *tmp = pixels_head;
     int length = 0;
 
     while (tmp != NULL) {

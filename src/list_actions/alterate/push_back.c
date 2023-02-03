@@ -7,13 +7,14 @@
 
 #include "my.h"
 
-void push_back(struct pixels **pixels_head, int value)
+void push_back(pixels **pixels_head, rgba color)
 {
-    struct pixels *new_pixel =
-        (struct pixels*)malloc(sizeof(struct pixels));
+    pixels *new_pixel =
+        (pixels*)malloc(sizeof(pixels));
 
+    new_pixel->sprite = malloc(sizeof(sprite));
     new_pixel->next = NULL;
-    new_pixel->data = value;
+    new_pixel->sprite->color = color;
     while ((*pixels_head)->next != NULL)
         (*pixels_head) = (*pixels_head)->next;
     (*pixels_head)->next = new_pixel;

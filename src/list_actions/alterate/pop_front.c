@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-void pop_front(struct pixels **pixels_head)
+void pop_front(pixels **pixels_head)
 {
     if (pixels_length((*pixels_head)) <= 1) {
         (*pixels_head) = NULL;

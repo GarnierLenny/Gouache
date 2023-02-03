@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-void erase(struct pixels **pixels_head, int index)
+void erase(pixels **pixels_head, int index)
 {
     int current = 0;
 

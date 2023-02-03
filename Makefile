@@ -16,9 +16,11 @@ SRC			=	src/main.c\
 				src/list_actions/alterate/erase.c\
 				src/list_actions/utils/list_length.c\
 				src/list_actions/utils/print_list.c\
+				src/utils/create_color.c\
 
 INCLUDE		=	-I ./include\
 				-I ./include/structures\
+				-I ./include/structures/pixels\
 				-I ./include/prototypes\
 
 NAME		=	gouache
